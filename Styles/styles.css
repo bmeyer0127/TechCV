@@ -1,0 +1,126 @@
+/* 
+    TODO:
+    - BUG: Exp Arrows no longer do translation effect after clicked on
+*/
+
+#body {
+    background-color: #DDDDDD;
+}
+
+.noSelect {
+    webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
+.blkTxt {
+    color: #393E46;
+}
+
+#headingContainer {
+    margin-top: 2%;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 50%;
+}
+
+#intro {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+}
+
+#name {
+    border-width: 2px;
+    border-style: none none solid none;
+    border-color: #393E46;
+    display: inline-block;
+    font-family: 'Yellowtail', cursive;
+    font-weight: 100;
+    font-size: 4em;
+    margin-top: 10px;
+    width: auto;
+}
+
+#expIntro {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    
+}
+
+#aboutMeBtn {
+    align-items: center;
+    border: 2px solid #393E46;
+    border-radius: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: auto;
+    position: relative;
+}
+
+#aboutMeBtn:after {
+    background-color: #393E46;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 29px;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px,8px);
+    transition: transform .2s ease-out;
+    width: 100%;
+    z-index: -1;
+}
+
+#aboutMeBtn:hover:after {
+    transform: translate(0,0);
+}
+
+#aboutMeBtn:active {
+    background-color: #ffdeda;
+    outline: 0;
+}
+
+#aboutMeBtn:hover {
+    outline: 0;
+}
+
+
+
+#aboutMeBtnText {
+    display: inline-block;
+    font-family: 'Montserrat:ital,wght@1,500', sans-serif;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+.expTag {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.expArrow {
+    position: relative;
+    top: 4px;
+    transition: transform .2s ease-out;
+}
+
+/* .expTag:hover .expArrow{
+    transform: translate(-3px,0);
+    transition: transform .2s ease-out;
+} */
+
+
+/* Ugh, guess I gotta use JS for this */
+
+/* .expTag:focus .expArrow {
+    transform: rotate(90deg);
+    transition: transform .2s ease-out;
+} */

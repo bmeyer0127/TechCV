@@ -1,0 +1,87 @@
+<!-- 
+    TODO:
+    - Add contact info and git page
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brett Meyer</title>
+    <link rel="stylesheet" href="Styles/styles.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,500&family=Yellowtail&display=swap" rel="stylesheet">
+
+</head>
+<body id="body">
+    
+
+    <!-- Heading Container -->
+    <div id="headingContainer">
+        <h1 id="intro" class="noSelect blkTxt">Hey there, I'm</h1>
+        <h1 id="name" class="noSelect blkTxt">Brett Meyer</h1>
+    <!-- Heading Container /-->
+
+    <!-- Exp Container -->
+        <h1 id="expIntro" class="noSelect blkTxt">Here is a little bit about me, if you'd like</h1>
+        <div x-data="{open:false}">
+            <button  @click="open = ! open" id="aboutMeBtn" class="noSelect blkTxt"><span id="aboutMeBtnText">about me</span></button>
+            <div x-show="open" id="aboutMeContent">
+
+                <!-- Barista Experience (may take away idk) -->
+                <div x-data="{barista:false}">
+                    <h3 @click="barista = ! barista, rotateArrow(0)" 
+                    @mouseover="translateArrowOn(0)" 
+                    @mouseout="translateArrowOff(0)"
+                    class="expTag noSelect blkTxt" 
+                    tabindex="0">Barista <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
+                    <div x-show="barista">
+                        <p>barista experience</p>
+                    </div>
+                </div>
+                <!-- Barista Experience /-->
+
+                <!-- Bartending Experience -->
+                <div x-data="{bartender:false}">
+                    <h3 @click="bartender = ! bartender, rotateArrow(1)" 
+                    @mouseover="translateArrowOn(1)" 
+                    @mouseOut="translateArrowOff(1)"
+                    class="expTag noSelect blkTxt" 
+                    tabindex="0">Bartender <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
+
+                    <div x-show="bartender">
+                        <p>bartending experience</p>
+                    </div>
+                </div>
+                <!-- Bartending Experience /-->
+
+                <!-- Tech Experience -->
+                <div x-data="{tech:false}">
+                    <h3 @click="tech = ! tech, rotateArrow(2)" 
+                    @mouseover="translateArrowOn(2)" 
+                    @mouseout="translateArrowOff(2)"
+                    class="expTag noSelect blkTxt" 
+                    tabindex="0">Tech <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
+
+                    <div x-show="tech">
+                        <p>tech experience</p>
+                    </div>
+                </div>
+                <!-- Tech Experience /-->
+            </div>
+        </div>
+    <!-- Exp Container /-->
+    </div>
+    
+
+    <script src="JS/scripts.js"></script>
+    <!-- Icons Import -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
