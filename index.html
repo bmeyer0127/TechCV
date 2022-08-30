@@ -19,7 +19,24 @@
 
 </head>
 <body id="body">
-    
+
+    <!-- Contact Info -->
+        <div id="contactInfoContainer">
+            <h1 id="contactInfoHead" class="noSelect">Here's how you can reach me</h1>
+            <ion-icon x-data="{icon:false}" @click="contactIconTrans(0)" name="phone-portrait-outline" class="contactInfoIcon phone"></ion-icon>
+            <ion-icon x-data="{icon:false}" @click="contactIconTrans(1)" name="mail-outline" class="contactInfoIcon email"></ion-icon>
+            <ion-icon x-data="{icon:false}" @click="contactIconTrans(2)" name="pin-outline" class="contactInfoIcon address"></ion-icon>
+            <ion-icon x-data="{icon:false}" @click="contactIconTrans(3)" name="logo-github" class="contactInfoIcon github"></ion-icon>
+            <div class="contactInfoHider CIH0"></div>
+            <div class="contactInfoHider CIH1"></div>
+            <div class="contactInfoHider CIH2"></div>
+            <div class="contactInfoHider CIH3"></div>
+            <p class="contactInfo blkTxt">(317)-677-4256</p>
+            <p class="contactInfo blkTxt">bmeyer0127@gmail.com</p>
+            <p class="contactInfo blkTxt">902 N Meridian St. Apt 221</p>
+            <a href="https://github.com/bmeyer0127" class="contactInfo blkTxt">bmeyer0127</a>
+        </div>
+    <!-- Contact Info /-->
 
     <!-- Heading Container -->
     <div id="headingContainer">
@@ -28,55 +45,83 @@
     <!-- Heading Container /-->
 
     <!-- Exp Container -->
-        <h1 id="expIntro" class="noSelect blkTxt">Here is a little bit about me, if you'd like</h1>
-        <div x-data="{open:false}">
+        <h1 id="expIntro" class="noSelect blkTxt">Here is a little more about my work experience, if you'd like</h1>
+        <!-- <div x-data="{open:false}">
             <button  @click="open = ! open" id="aboutMeBtn" class="noSelect blkTxt"><span id="aboutMeBtnText">about me</span></button>
-            <div x-show="open" id="aboutMeContent">
+            <div x-show="open" id="aboutMeContent"> -->
+
+            <div x-data="{open:false}">
+                <button  @click="aboutMeOpen()" id="aboutMeBtn" class="noSelect blkTxt"><span id="aboutMeBtnText">about me</span></button>
+                <div id="aboutMeContent">
 
                 <!-- Barista Experience (may take away idk) -->
                 <div x-data="{barista:false}">
-                    <h3 @click="barista = ! barista, rotateArrow(0)" 
-                    @mouseover="translateArrowOn(0)" 
-                    @mouseout="translateArrowOff(0)"
-                    class="expTag noSelect blkTxt" 
-                    tabindex="0">Barista <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
+                    <h3 @click="barista = ! barista, assignTrans(0, 'rotate')" 
+                    @mouseover="assignTrans(0, 'transOn')" 
+                    @mouseout="assignTrans(0, 'transOff')"
+                    class="expTag noSelect blkTxt">Barista 
+                    <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
+
                     <div x-show="barista">
-                        <p>barista experience</p>
+                        <p class="expInfo blkTxt noSelect">I have a whole lot of experience in the world of coffee. <br> A <span>lot</span>. <br>
+                            I spent about 5 years in coffee since I was a late teenager and it may not seem like a selling point, 
+                            but I rarely spent over 10 months at any one job. This was because I wanted to be able to learn it all.
+                            During my coffee bender, I became a fine general barista, a manager, a head of coffee, and a head roaster.</p>
                     </div>
                 </div>
                 <!-- Barista Experience /-->
 
                 <!-- Bartending Experience -->
                 <div x-data="{bartender:false}">
-                    <h3 @click="bartender = ! bartender, rotateArrow(1)" 
-                    @mouseover="translateArrowOn(1)" 
-                    @mouseOut="translateArrowOff(1)"
-                    class="expTag noSelect blkTxt" 
-                    tabindex="0">Bartender <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
+                    <h3 @click="bartender = ! bartender, assignTrans(1, 'rotate')" 
+                    @mouseover="assignTrans(1, 'transOn')" 
+                    @mouseOut="assignTrans(1, 'transOff')"
+                    class="expTag noSelect blkTxt">Bartender <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
 
                     <div x-show="bartender">
-                        <p>bartending experience</p>
+                        <p class="expInfo blkTxt">I have about a year's worth of experience bartending.</p>
+                        <p class="expInfo blkTxt">During that year, I became the lead bartender at Sundry and Vice.</p>
+                        <p class="expInfo blkTxt">I have a vast array of knowledge regarding spirits, amari, and cocktails.</p>
                     </div>
                 </div>
                 <!-- Bartending Experience /-->
 
                 <!-- Tech Experience -->
                 <div x-data="{tech:false}">
-                    <h3 @click="tech = ! tech, rotateArrow(2)" 
-                    @mouseover="translateArrowOn(2)" 
-                    @mouseout="translateArrowOff(2)"
-                    class="expTag noSelect blkTxt" 
-                    tabindex="0">Tech <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
+                    <h3 @click="tech = ! tech, assignTrans(2, 'rotate')" 
+                    @mouseover="assignTrans(2, 'transOn')" 
+                    @mouseout="assignTrans(2, 'transOff')"
+                    class="expTag noSelect blkTxt">Tech <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
 
                     <div x-show="tech">
-                        <p>tech experience</p>
+                        <p class="expInfo blkTxt">Proficient in: Javascript, HTML, CSS, Python, Java</p>
                     </div>
                 </div>
                 <!-- Tech Experience /-->
+
+                <div x-data="{education:false}">
+                    <h3 @click="education = ! education, assignTrans(3, 'rotate')"
+                    @mouseover="assignTrans(3, 'transOn')" 
+                    @mouseout="assignTrans(3, 'transOff')"
+                    class="expTag noSelect blkTxt">Education <ion-icon name="chevron-forward-outline" class="expArrow"></ion-icon></h3>
+
+                    <div x-show="education">
+                        <p class="expInfo blkTxt">I have an incomplete bachelor's degree in computer science and anthropology from Purdue University</p>
+                        <p class="expInfo blkTxt">I attended 2 years and dropped out promptly at the end of my second semester due to difficulties regarding Covid-19</p>
+                    </div>
+                </div>
             </div>
         </div>
     <!-- Exp Container /-->
     </div>
+    <!-- Heading Container /-->
+
+    <!-- Personal Info -->
+    <div id="personalInfoContainer">
+        <h1 id="personalInfoHead">Here's a little about me as a person</h1>
+        <p class="personalInfoContent">I am a 22 year old little boy simply looking for a job and someone to tell him he is good</p>
+    </div>
+<!-- Personal Info /-->
     
 
     <script src="JS/scripts.js"></script>

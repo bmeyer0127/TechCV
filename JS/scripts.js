@@ -1,50 +1,60 @@
 
-// expArrow rotation
-let expTags = document.getElementsByClassName("expTag");
+// expArrow transformations
 let expArrows = document.getElementsByClassName("expArrow");
-let currentTrans = [];
-let rotate = [false, false, false];
-
-// function getCurrentTrans() {
-//     for (let i = 0; i < expArrows.length; i++) {
-//         let currentPush = (String(expArrows[i].style.transform));
-//         // let currentPush = getComputedStyle(expArrows[i]).getPropertyValue("transform");
-//         currentTrans.push(currentPush);
-//         console.log(currentTrans[0]);
-//         console.log(currentTrans[1]);
-//         console.log(currentTrans[2]);
-//     };
-// }
+let rotate = [false, false, false, false];
+let trans = [false, false, false, false];
+let rotateTrans = ["rotate(90deg)", "rotate(-90deg)"];
+let transTrans = ["translate(-3px,0)", "translate(3px,0)"];
 
 
-
-function rotateArrow(num) {
-    if (!rotate[num]) {
-        // expArrows[num].style.transform = "rotate(90deg)";
-        expArrows[num].setAttribute("style", "transform: rotate(90deg);");
-        rotate[num] = true;
-        return;
+let expTags = document.getElementsByClassName("expTag");
+let aboutMeContent = document.getElementById("aboutMeContent");
+let open = false;
+async function aboutMeOpen() {
+    if (!open) {
+        aboutMeContent.style.visibility = "visible";
+        aboutMeContent.style.transform = "translate(0,10px)";
+        open = !open;
     }
-    if (rotate[num]) {
-        // expArrows[num].style.transform = "rotate(0deg)";
-        expArrows[num].setAttribute("style", "transform: rotate(0deg);");
-        rotate[num] = false;
-        return;
+    else if (open) {
+        aboutMeContent.style.transform = "translate(0,-10px)";
+        aboutMeContent.style.visibility = "hidden";
+        open = !open;
     }
 }
 
-function translateArrowOn(num) {
-    // expArrows[num].style.transform = "translate(-3px,0)";
-    compStyle = getComputedStyle(expArrows[num])
-    expArrows[num].setAttribute("style", "transform: translate(-3px,0);");
+function assignTrans(index, type) {
+
+    if (type == "transOn") {
+        expArrows[index].style.transform += transTrans[0];
+    }
+    else if (type == "transOff") {
+        expArrows[index].style.transform += transTrans[1];
+    }
+    else if (type == "rotate") {
+        if (rotate[index] == false) {
+            expArrows[index].style.transform += rotateTrans[0];
+            rotate[index] = true;
+        }
+        else if (rotate[index] == true) {
+            expArrows[index].style.transform += rotateTrans[1];
+            rotate[index] = false;
+        }
+    }
+    
 }
 
-function translateArrowOff(num) {
-    // expArrows[num].style.transform = "translate(3px,0)";
-    expArrows[num].setAttribute("style", "transform: translate(3px,0);");
-}
+let contactIcons = document.getElementsByClassName("contactInfoIcon");
+let contactInfo = document.getElementsByClassName("contactInfo");
+let contactInfoHiders = document.getElementsByClassName("contactInfoHider");
+function contactIconTrans(index) {
+    if (!trans[index]) {
+        contactIcons[index].style.transform += "translate(-265px, 0)";
 
-function assignTransformation() {
-    let finalTransformation = 
-    expArrows[num].style.transform = finalTransformation;
+        contactInfoHiders[index].style.transform += "translate(-250px,0)";
+        trans[index] = !trans[index];
+    }
+    else {
+        return;
+    }
 }

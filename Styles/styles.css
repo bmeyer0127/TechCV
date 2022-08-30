@@ -1,6 +1,6 @@
 /* 
     TODO:
-    - BUG: Exp Arrows no longer do translation effect after clicked on
+    - Add animation for aboutMe and each category
 */
 
 #body {
@@ -14,6 +14,11 @@
        -moz-user-select: none; /* Old versions of Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
+}
+
+::selection {
+    background-color: #393E46;
+    color: #DDDDDD;
 }
 
 .blkTxt {
@@ -33,7 +38,7 @@
 
 #intro {
     font-family: 'Montserrat', sans-serif;
-    margin-top: 10px;
+    margin-top: 2%;
 }
 
 #name {
@@ -48,10 +53,125 @@
     width: auto;
 }
 
+#contactInfoContainer {
+    position: absolute;
+    display:inline-block;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+#contactInfoHead {
+    border-width: 1px;
+    border-style: none none solid none;
+    border-color: #393E46;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+}
+
+ion-icon {
+    color: #393E46;
+}
+
+.contactInfoIcon {
+    cursor: pointer;
+    display: inline;
+    font-size: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    position: absolute;
+    transition: transform .3s ease-out;
+    z-index: 2;
+}
+
+.phone {
+    text-align: center;
+}
+
+.email {
+    margin-top: 39.792px;
+}
+
+.address {
+    margin-top: 79.584px;
+}
+
+.github {
+    margin-top: 119.376px;
+}
+
+.gitText {
+    font-weight: bold;
+}
+
+.contactInfo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 28px;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-left: 50px;
+    z-index: -1;
+}
+
+.contactInfoHider {
+    background-color: #DDDDDD;
+    height: 28px;
+    position: absolute;
+    right: 15px;
+    transition: transform .3s ease-out;
+    width: 246.41px;
+    z-index: 1;
+}
+
+.CIH1 {
+    margin-top: 39.792px;
+}
+
+.CIH2 {
+    margin-top: 79.584px;
+}
+
+.CIH3 {
+    margin-top: 119.376px;
+}
+
+#personalInfoContainer {
+    position: absolute;
+    display:inline-block;
+    margin-right: 2%;
+    margin-top: 2%;
+    right: 0;
+    width: 296.41px;
+}
+
+#personalInfoHead {
+    border-width: 1px;
+    border-style: none none solid none;
+    border-color: #393E46;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.personalInfoContent {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 28px;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-right: 50px;
+    text-align: center;
+}
+
 #expIntro {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.4em;
-    
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
 }
 
 #aboutMeBtn {
@@ -101,26 +221,31 @@
     font-size: 1.5em;
 }
 
+#aboutMeContent {
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+    transition: transform .2s ease-out;
+    visibility: hidden;
+}
+
 .expTag {
     cursor: pointer;
     display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    
 }
 
 .expArrow {
+    --ionicon-stroke-width: 8px;
     position: relative;
     top: 4px;
     transition: transform .2s ease-out;
 }
 
-/* .expTag:hover .expArrow{
-    transform: translate(-3px,0);
-    transition: transform .2s ease-out;
-} */
-
-
-/* Ugh, guess I gotta use JS for this */
-
-/* .expTag:focus .expArrow {
-    transform: rotate(90deg);
-    transition: transform .2s ease-out;
-} */
+.expInfo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
