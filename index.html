@@ -117,9 +117,22 @@
     <!-- Heading Container /-->
 
     <!-- Personal Info -->
-    <div id="personalInfoContainer">
-        <h1 id="personalInfoHead">Here's a little about me as a person</h1>
-        <p class="personalInfoContent">I am a 22 year old little boy simply looking for a job and someone to tell him he is good</p>
+    <div x-data="{eatShit:true}" id="personalInfoContainer">
+        <fieldset id="personalInfoChoiceFieldset">
+            <legend id="personalInfoHead">I can tell you a little bit about myself if you'd like</legend>
+            <input @click="updateInfoText()" type="radio" name="personalInfoChoice" id="yeah" value="yeah">
+            <label class="personalInfoChoiceLabels" for="yeah">yeah</label>
+            <input @click="updateInfoText()" type="radio" name="personalInfoChoice" id="nah" value="yeah">
+            <label class="personalInfoChoiceLabels" for="nah">nah</label>
+        </fieldset>
+        
+        <div id="personalInfoContentYeah">
+            <p class="personalInfoContent">I am a 22 year old little boy simply looking for a job and someone to tell him he is good. And he is killing it</p>
+        </div>
+        <div id="personalInfoContentNah">
+            <p class="personalInfoContent">Super fair</p>
+        </div>
+        
     </div>
 <!-- Personal Info /-->
     

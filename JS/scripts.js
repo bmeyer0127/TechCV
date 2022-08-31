@@ -1,5 +1,20 @@
 
-// expArrow transformations
+//updateInfoText
+    const personalInfoChoices = document.getElementsByName("personalInfoChoice");
+    function updateInfoText() {
+        console.log("is calling function");
+        if (personalInfoChoices[0].checked) {
+            document.getElementById("personalInfoContentYeah").style.visibility = "visible";
+            document.getElementById("personalInfoContentNah").style.visibility = "hidden";
+        }
+        if (personalInfoChoices[1].checked) {
+            document.getElementById("personalInfoContentNah").style.visibility = "visible";
+            document.getElementById("personalInfoContentYeah").style.visibility = "hidden";
+        }
+    }
+//updateInfoText
+
+// expArrow Transformations
 let expArrows = document.getElementsByClassName("expArrow");
 let rotate = [false, false, false, false];
 let trans = [false, false, false, false];
@@ -10,7 +25,7 @@ let transTrans = ["translate(-3px,0)", "translate(3px,0)"];
 let expTags = document.getElementsByClassName("expTag");
 let aboutMeContent = document.getElementById("aboutMeContent");
 let open = false;
-async function aboutMeOpen() {
+function aboutMeOpen() {
     if (!open) {
         aboutMeContent.style.visibility = "visible";
         aboutMeContent.style.transform = "translate(0,10px)";
@@ -41,9 +56,10 @@ function assignTrans(index, type) {
             rotate[index] = false;
         }
     }
-    
 }
+//expArrow Transformation
 
+//contactIcon Transformation
 let contactIcons = document.getElementsByClassName("contactInfoIcon");
 let contactInfo = document.getElementsByClassName("contactInfo");
 let contactInfoHiders = document.getElementsByClassName("contactInfoHider");
@@ -58,3 +74,4 @@ function contactIconTrans(index) {
         return;
     }
 }
+//contactIcon Transformation
