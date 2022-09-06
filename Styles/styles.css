@@ -190,6 +190,15 @@ ion-icon {
     position: absolute;
     right: 0;
     text-align: center;
+    top: 140px;
+}
+
+.personalInfoCool {
+    font-family: 'Yellowtail', cursive;
+    font-size: 2em;
+    font-weight: lighter;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 #personalInfoContentYeah {
@@ -281,4 +290,12 @@ ion-icon {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     font-weight: bold;
+}
+
+.edHeader {
+    border-color: #393E46;
+    border-style: none none solid none;
+    border-width: 1px;
+    display: inline;
+    font-size: 1.1em;
 }
