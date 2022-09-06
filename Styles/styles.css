@@ -299,3 +299,18 @@ ion-icon {
     display: inline;
     font-size: 1.1em;
 }
+
+.siteLinkDiv {
+    bottom: 10px;
+    position: absolute;
+}
+
+.siteLinkText {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.siteLink {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
